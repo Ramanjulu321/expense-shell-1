@@ -21,3 +21,5 @@ then
 else
     echo -e "MySQL Root password is already setup...$Y SKIPPING $N"
 fi
+
+     echo -e "MySQL Root password is already setup...$Y SKIPPING $N"
