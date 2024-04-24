@@ -1,4 +1,4 @@
-#!/bin/bash.
+#!/bin/bash
 
 source ./common.sh
 
@@ -15,7 +15,6 @@ id expense &>>$LOGFILE
 if [ $? -ne 0 ]
 then
     useradd expense &>>$LOGFILE
-
     echo -e "Expense user  created...$G Successfully $N" 
 else
     echo -e "Expense user already created...$Y SKIPPING $N"
