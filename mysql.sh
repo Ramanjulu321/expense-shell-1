@@ -21,3 +21,4 @@ then
 else
     echo -e "MySQL Root password is already setup...$Y SKIPPING $N"
 fi
+mysql -h 172.31.93.113 -uroot -pExpenseApp@1 -e 'show databases;' 
