@@ -14,11 +14,10 @@ systemctl enable mysqld &>>$LOGFILE
 systemctl start mysqld &>>$LOGFILE
 
 #Below code will be useful for idempotent nature
-mysql -h db.daws-78s.store -uroot -pExpenseApp@1 -e 'show databases;' &>>$LOGFILE
+mysql -h db.daws-78s.store -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOGFILE
 else
     echo -e "MySQL Root password is already setup...$Y SKIPPING $N"
 fi
-mysql -h 172.31.93.113 -uroot -pExpenseApp@1 -e 'show databases;' 
